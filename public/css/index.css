@@ -1,10 +1,3 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-a {
-  color: #00b7ff;
-}
 html,
 body,
 .view {
@@ -34,7 +27,7 @@ footer.page-footer {
   color: #fff;
 }
 .view {
-  background: url("http://mdbootstrap.com/img/Photos/Horizontal/Work/full page/img%20(2).jpg") no-repeat center center fixed;
+  background: url("//mdbootstrap.com/img/Photos/Horizontal/Work/full page/img%20(2).jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
