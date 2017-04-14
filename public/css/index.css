@@ -5,6 +5,7 @@ body,
 }
 .navbar {
   background-color: transparent;
+  font-weight: bold;
 }
 .scrolling-navbar {
   -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
