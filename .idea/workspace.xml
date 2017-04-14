@@ -22,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="702">
-              <caret line="482" column="50" lean-forward="false" selection-start-line="482" selection-start-column="50" selection-end-line="482" selection-end-column="50" />
+              <caret line="483" column="50" lean-forward="false" selection-start-line="483" selection-start-column="50" selection-end-line="483" selection-end-column="50" />
               <folding>
                 <element signature="n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -427,7 +427,7 @@
       <workItem from="1491952262817" duration="3758000" />
       <workItem from="1491960654430" duration="4768000" />
       <workItem from="1492012866167" duration="830000" />
-      <workItem from="1492205470359" duration="2418000" />
+      <workItem from="1492205470359" duration="2449000" />
     </task>
     <task id="LOCAL-00001" summary="Added background for cards">
       <created>1492208274609</created>
@@ -436,11 +436,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492208274610</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added background for cards">
+      <created>1492208383682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492208383682</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11856000" />
+    <option name="totallyTimeSpent" value="11887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -695,7 +702,7 @@
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
-          <caret line="482" column="50" lean-forward="false" selection-start-line="482" selection-start-column="50" selection-end-line="482" selection-end-column="50" />
+          <caret line="483" column="50" lean-forward="false" selection-start-line="483" selection-start-column="50" selection-end-line="483" selection-end-column="50" />
           <folding>
             <element signature="n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>

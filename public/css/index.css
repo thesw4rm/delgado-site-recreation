@@ -14,9 +14,8 @@ body,
 .top-nav-collapse {
   background-color: #3c4f74;
 }
-
 #staff {
-  background: url("/img/bg/staff_bg.jpg") 50% 0 no-repeat fixed;
+  background: url("/img/bgs/staff_bg.jpg") 50% 0 no-repeat fixed;
   background-size: cover;
 }
 footer.page-footer {
