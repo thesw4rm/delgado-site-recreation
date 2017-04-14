@@ -1,0 +1,42 @@
+<!--Navbar-->
+<nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <img src="/favicon.ico" alt="Delgado eLearn Program"
+                 id="brand-img" class="img-responsive vertical-center">
+            <strong>eLearn Program</strong>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a href="#intro" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-location">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#staff">Coaches</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+
+                </li>
+            </ul>
+            <form class="form-inline waves-effect waves-light">
+                <% if (username) { %>
+                <input class="form-control" type="text" placeholder="Hello <%= username %>">
+                <% } else{ %>
+                <input class="form-control" type="text" placeholder="Search">
+
+                <% } %>
+
+            </form>
+        </div>
+    </div>
+</nav>
+<!--/.Navbar-->
