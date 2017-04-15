@@ -1,0 +1,141 @@
+<!--Footer-->
+<footer class="page-footer center-on-small-only">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-3 offset-md-1">
+                <h5 class="title">Important Links</h5>
+                <p>Quickly navigate to a key page of eLearn by clicking on the appropriate link.</p>
+            </div>
+            <!--/.First column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Second column-->
+            <div class="col-md-2 offset-md-1">
+                <h5 class="title">Student Links</h5>
+                <ul>
+                    <li><a href="#!">Your Coach</a></li>
+                    <li><a href="#!">Google Classroom</a></li>
+                    <li><a href="#!">View Emails</a></li>
+                    <li><a href="#!">Short Lessons</a>
+                    <li><a href="#!">Check Your Hours</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Third column-->
+            <div class="col-md-2">
+                <h5 class="title">Resources</h5>
+                <ul>
+                    <li><a href="#!">How eLearn Works</a></li>
+                    <li><a href="#!">About The Hiset</a></li>
+                    <li><a href="#!">Frequently Asked Questions</a></li>
+                    <li><a href="#!">Email Digests</a></li>
+                    <li><a href="#!">Affordable Internet And Computers</a></li>
+                </ul>
+            </div>
+            <!--/.Third column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Fourth column-->
+            <div class="col-md-2">
+                <h5 class="title">Courses</h5>
+                <ul>
+                    <li><a href="#!">Khan Academy</a></li>
+                    <li><a href="#!">Activities On-Demand</a></li>
+                </ul>
+            </div>
+            <!--/.Fourth column-->
+
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <hr>
+
+    <!--Call to action-->
+    <div class="call-to-action">
+        <ul>
+            <li>
+                <h5>Register for free</h5></li>
+            <li><a href="http://www.dcc.edu/academics/adult-ed/email_list_and_program_brochure.aspx" class="btn btn-danger">Sign up!</a></li>
+        </ul>
+    </div>
+    <!--/.Call to action-->
+
+    <hr>
+
+    <!--Social buttons-->
+    <div class="social-section">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/groups/445095515676900/" class="btn-floating btn-small btn-fb">
+                    <i class="fa fa-facebook"> </i>
+                </a>
+            </li>
+            <li>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=info@elearnclass.org&tf=1"
+                   class="btn-floating btn-small btn-git">
+                    <img class="social-icon-img" src="/img/icons/gmail.jpg"
+                         alt="Gmail">
+                </a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/communities/109477860690730117453"
+                   class="btn-floating btn-small btn-gplus">
+                    <i id="plus-logo" class="fa fa-google-plus"> </i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/elearndelgado/" class="btn-floating btn-small btn-li">
+                    <i class="fa fa-instagram"> </i>
+                </a>
+            </li>
+            <li>
+                <a href="http://classroom.google.com" class="btn-floating btn-small btn-git">
+                    <img src="/img/icons/classroom.png" alt="Google Classroom"
+                         class="social-icon-img">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--/.Social buttons-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <a href="https://www.MDBootstrap.com"> Existent Organisation </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+<!--
+<script>
+    $(".page-footer").find(".col-md-2").find("li").find("a").each(function(){
+        $(this).text($(this).text().toUpperCase()).css('text-decoration', 'underline');
+    });
+</script>-->
+
+<script>
+    $(".social-icon-img").height($("#plus-logo").height());
+    $(".social-icon-img").height($("#plus-logo").width());
+    $(window).resize(function () {
+        $(".social-icon-img").height($("#plus-logo").height());
+        $(".social-icon-img").height($("#plus-logo").width());
+    });
+
+    $(".social-section").find("li").find("a").click(function(){
+        window.location = $(this).attr('href');
+    });
+</script>
