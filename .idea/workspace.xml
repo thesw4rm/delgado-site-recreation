@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1b649ee-d177-4736-b192-b48a97b6c19a" name="Default" comment="" />
+    <list default="true" id="b1b649ee-d177-4736-b192-b48a97b6c19a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -509,7 +511,7 @@
       <workItem from="1491952262817" duration="3758000" />
       <workItem from="1491960654430" duration="4768000" />
       <workItem from="1492012866167" duration="830000" />
-      <workItem from="1492205470359" duration="10634000" />
+      <workItem from="1492205470359" duration="11070000" />
     </task>
     <task id="LOCAL-00001" summary="Added background for cards">
       <created>1492208274609</created>
@@ -529,7 +531,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20072000" />
+    <option name="totallyTimeSpent" value="20508000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
