@@ -18,6 +18,7 @@ body,
 #staff {
   background: url("/img/bgs/staff_bg.svg") 50% 0 no-repeat;
   background-size: cover;
+  color: #fff;
 }
 footer.page-footer {
   background-color: #3c4f74;
