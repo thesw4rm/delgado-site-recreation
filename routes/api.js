@@ -13,7 +13,7 @@ router.get(
                 "gmail",
                 "role",
                 "about",
-                "img",
+                "img"
             ],
             function (err, coaches) {
                 res.setHeader("Content-type", "application/json");
@@ -22,7 +22,7 @@ router.get(
                 var count = 0;
                 for (var x in coaches) {
                     coaches[x].about = coaches[x].about.replace(/(?:\r\n|\r|\n)/g, '');
-                    coaches[x].objId = count;
+                    coaches[x]['objId']= count;
                     count++;
                 }
                 res.send(
