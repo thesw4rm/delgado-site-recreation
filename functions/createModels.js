@@ -1,7 +1,7 @@
 function createCoachesModel() {
     var CoachesSchema = mongoose.Schema(
         {
-            _id: Number,
+            id: Number,
             nsme: String,
             role: String,
             img: String,
