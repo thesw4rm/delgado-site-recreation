@@ -8,14 +8,14 @@ router.get(
         var Coaches = models.coachesModel;
         Coaches.find(
             {},
-            [
+            /*[
                 "nsme",
                 "gmail",
                 "role",
                 "about",
                 "img",
                 "_id"
-            ],
+            ],*/
             function (err, coaches) {
                 res.setHeader("Content-type", "application/json");
                 res.setHeader("Access-Control-Allow-Origin", "*");
