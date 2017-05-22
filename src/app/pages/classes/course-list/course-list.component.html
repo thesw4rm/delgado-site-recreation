@@ -1,0 +1,119 @@
+<div id="course-list">
+    <section class="section text-center">
+        <h1 class="section-heading wow fadeIn">Course Catalog</h1>
+        <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                       dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                       proident, sunt in culpa qui officia deserunt mollit anim id est
+                                       laborum.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="vertical-center">
+                        <h1>Choose Subject</h1>
+                        <br>
+                        <form id="subjects-form" role="search">
+                            <fieldset class="form-group" *ngFor="let subject of subjects, let i = index">
+                                <input (change)="searchSubject = $event.target.value" [value]="subject" name="subjects"
+                                       type="radio" id="{{'radio' + i}}" [attr.checked]="i == 0 ? true : null">
+                                <label for="{{'radio' + i}}">{{subject}}</label>
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-2">
+                    -*
+
+
+                    <div class="md-form">
+                        <input (value)="searchClasses" (input)="searchClasses = $event.target.value" type="text"
+                               id="table-search" class="form-control">
+                        <label for="table-search">Search</label>
+                    </div>
+                    <div class="table-responsive table-striped">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Class title</th>
+                                    <th>Start Date</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let course of classes | courseFilter:searchClasses | subjectFilter:searchSubject, let i=index">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{course.name}}</td>
+                                    <td>{{course.startDate.toDateString() + " " + course.startDate.toTimeString()}}</td>
+                                    <td>
+                                        <button (click)="modalButtonClick(i)" type="button"
+                                                class="btn btn-primary btn-sm class-detail-modal-btn"
+                                                data-toggle="modal"
+                                                data-target="classDetailModal">
+                                            View More
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+</div>
+<!-- Modal -->
+<div *ngIf="classDetails" class="modal fade bottom" data-backdrop="false" id="classDetailModal" tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-full-height modal-bottom" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close closebtn-modal" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h1 class="modal-title w-100" id="myModalLabel">{{classDetails.name}}</h1>
+
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <p class="margin-needed-bottom">{{classDetails.description}}</p>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="http://www.clipartkid.com/images/73/gold-star-clipart-no-background-clipart-panda-free-clipart-images-7ttePG-clipart.png"
+                             height="100%" alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h4>Syllabus</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6"></div>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary waves-effect waves-light closebtn-modal"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary waves-effect waves-light">Save
+                                                                                       changes
+                </button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>

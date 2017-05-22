@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("/assets/css/intercom.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css");
+@import url("/assets/css/mdb.min.css");
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("/assets/css/misc.css");
+@import url('https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css?ver=4.3.2');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+

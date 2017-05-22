@@ -1,0 +1,74 @@
+<!--Coaches Directory Wrapper-->
+<div id="coaches">
+    <div class="container">
+        <section class="section">
+            <h1 class="h1-responsive section-heading wow fadeIn">Coaches directory</h1>
+            <p class="lead section-description">Below is the coaches directory. [Insert instructions to use here]</p>
+            <div class="row">
+                <ng-container *ngIf="!coaches">
+                    <div class="col-md-12">
+                        <h1 class="text-center vertical-center">Loading...</h1>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="coaches">
+                    <div *ngFor="let x of coaches" class="col-md-4 col-sm-6">
+                        <div *ngIf="incrementCount() as countNum" class="card-wrapper">
+                            <div [attr.id]="'card-'+countNum" class="card-rotating effect__click">
+
+                                <!--Front Side-->
+                                <div class="face front">
+
+                                    <!-- Image-->
+                                    <div class="card-up">
+                                        <img src="//images.unsplash.com/photo-1460751329354-07d91b47af38?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg="
+                                             class="img-fluid">
+                                    </div>
+                                    <!--Avatar-->
+                                    <div class="avatar"><img
+                                            src="{{x.img}}"
+                                            class="rounded-circle img-responsive">
+                                    </div>
+                                    <!--Content-->
+                                    <div class="card-block">
+                                        <h4>{{x.nsme}}</h4>
+                                        <p>{{x.role}}</p>
+                                        <!--Triggering button-->
+                                        <a class="rotate-btn" [attr.data-card]="'card-'+countNum"><i class="fa fa-repeat"></i> Click here
+                                                                                                              to
+                                                                                                              rotate</a>
+                                    </div>
+                                </div>
+                                <!--/.Front Side-->
+
+                                <!--Back Side-->
+                                <div class="face back">
+
+                                    <!--Content-->
+                                    <h4>About me</h4>
+                                    <hr>
+                                    <p class="coach-about">{{x.about}}</p>
+                                    <hr>
+                                    <!--Social Icons-->
+                                    <ul class="inline-ul">
+                                        <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i class="fa fa-envelope"></i></a>
+                                        </li>
+                                        <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                    <!--Triggering button-->
+                                    <a class="rotate-btn" [attr.data-card]="'card-'+count"><i class="fa fa-undo"></i> Click here to
+                                                                                                        rotate
+                                                                                                        back</a>
+
+                                </div>
+                                <!--/.Back Side-->
+
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+    </div>
+</div>
