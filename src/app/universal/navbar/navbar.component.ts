@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
     static runAllOnce() {
         NavbarComponent.setNavbarHeight();
         if ($(window).width() <= 991) {
-            this.setButtonListener();
+            NavbarComponent.setButtonListener();
         }
     }
 
@@ -44,7 +44,7 @@ export class NavbarComponent implements OnInit {
     static resizeFunction() {
         NavbarComponent.setNavbarHeight();
         if ($(window).width() <= 991) {
-            this.setButtonListener();
+            NavbarComponent.setButtonListener();
         }
     }
 
