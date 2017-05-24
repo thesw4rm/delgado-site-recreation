@@ -3,7 +3,12 @@
     <div class="container">
         <section class="section">
             <h1 class="h1-responsive section-heading wow fadeIn">Coaches directory</h1>
-            <p class="lead section-description">Below is the coaches directory. [Insert instructions to use here]</p>
+            <p class="lead section-description">Your teachers and coaches are always available to answer questions,
+                                                share resources, and help you work towards your goals.
+            </p>
+            <p class="lead section-description">
+                Click the cards below to learn more about each staff member and find how to connect with them!
+            </p>
             <div class="row">
                 <ng-container *ngIf="!coaches">
                     <div class="col-md-12">
@@ -11,9 +16,9 @@
                     </div>
                 </ng-container>
                 <ng-container *ngIf="coaches">
-                    <div *ngFor="let x of coaches" class="col-md-4 col-sm-6">
-                        <div *ngIf="incrementCount() as countNum" class="card-wrapper">
-                            <div [attr.id]="'card-'+countNum" class="card-rotating effect__click">
+                    <div *ngFor="let x of coaches" class="col-md-4">
+                        <div class="card-wrapper">
+                            <div [attr.id]="x._id" class="card-rotating effect__click">
 
                                 <!--Front Side-->
                                 <div class="face front">
@@ -33,9 +38,11 @@
                                         <h4>{{x.nsme}}</h4>
                                         <p>{{x.role}}</p>
                                         <!--Triggering button-->
-                                        <a class="rotate-btn" [attr.data-card]="'card-'+countNum"><i class="fa fa-repeat"></i> Click here
-                                                                                                              to
-                                                                                                              rotate</a>
+                                        <a class="rotate-btn" (click)="openCard($event.target);"
+                                           [attr.data-card]="x._id"><i
+                                                class="fa fa-repeat"></i> Click here
+                                                                          to
+                                                                          rotate</a>
                                     </div>
                                 </div>
                                 <!--/.Front Side-->
@@ -52,14 +59,17 @@
                                     <ul class="inline-ul">
                                         <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
                                         <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i class="fa fa-envelope"></i></a>
+                                        <li><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i
+                                                class="fa fa-envelope"></i></a>
                                         </li>
                                         <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
                                     </ul>
                                     <!--Triggering button-->
-                                    <a class="rotate-btn" [attr.data-card]="'card-'+count"><i class="fa fa-undo"></i> Click here to
-                                                                                                        rotate
-                                                                                                        back</a>
+                                    <a (click)="closeCard($event.target);" class="rotate-btn"
+                                       [attr.data-card]="x._id"><i class="fa fa-undo"></i>
+                                        Click here to
+                                        rotate
+                                        back</a>
 
                                 </div>
                                 <!--/.Back Side-->

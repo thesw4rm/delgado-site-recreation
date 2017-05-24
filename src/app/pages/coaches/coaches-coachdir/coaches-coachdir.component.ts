@@ -1,4 +1,4 @@
-import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {CoachesCoachdirService} from "./coaches-coachdir.service";
 import {Coach} from "./coach";
 
@@ -13,16 +13,17 @@ import {Coach} from "./coach";
         ]
     }
 )
-export class CoachesCoachdirComponent implements OnInit, AfterViewChecked {
+export class CoachesCoachdirComponent implements OnInit {
     coaches: Coach[];
-    count: number;
+    count = 0;
+    countNum = 1;
 
     constructor(private coachService: CoachesCoachdirService) {
-        this.count = 0;
     }
 
     incrementCount() {
         this.count += 1;
+        console.log("CALLED: " + this.count);
         return this.count;
     }
 
@@ -32,20 +33,31 @@ export class CoachesCoachdirComponent implements OnInit, AfterViewChecked {
         );
     }
 
-    setCardRotation() {
-        $('.rotate-btn').on('click', function () {
-            const t = $(this).attr('data-card');
-            $('#' + t).toggleClass('flipped');
-        });
+
+    openCard(value): void {
+        let el = $('#' + $(value).attr('data-card'));
+        while (!el) {
+            el = $('#' + $(value).attr('data-card'));
+        }
+        console.log(el);
+        el.addClass('flipped');
+    }
+
+    closeCard(value): void {
+        let el = $('#' + $(value).attr('data-card'));
+        while (!el) {
+            console.log("SEARCHING");
+            el = $('#' + $(value).attr('data-card'));
+        }
+        el.removeClass('flipped');
+
     }
 
     ngOnInit() {
         this.getCoaches();
+        console.log(this.count);
 
     }
 
-    ngAfterViewChecked() {
-        this.setCardRotation();
-    }
 
 }
