@@ -36,7 +36,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Class title</th>
-                                    <th>Start Date</th>
+                                    <th *ngIf="windowRef.innerWidth > 576">Class Description</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -44,7 +44,7 @@
                                 <tr *ngFor="let course of classes | courseFilter:searchClasses | subjectFilter:searchSubject, let i=index">
                                     <th scope="row">{{i+1}}</th>
                                     <td>{{course.name}}</td>
-                                    <td>{{course.startDate.toDateString() + " " + course.startDate.toTimeString()}}</td>
+                                    <td *ngIf="windowRef.innerWidth > 576">{{course.description}}</td>
                                     <td>
                                         <button (click)="modalButtonClick(i)" type="button"
                                                 class="btn btn-primary btn-sm class-detail-modal-btn"
@@ -73,11 +73,14 @@
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <button type="button" class="close closebtn-modal" data-dismiss="modal"
-                        aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h1 class="modal-title w-100" id="myModalLabel">{{classDetails.name}}</h1>
+                <div class="modal-title w-100" id="myModalLabel">
+                    <h1>
+                        <img id="class-logo" class="img-fluid"
+                             src="http://placehold.it/350x150"
+                             height="20%" alt=""><br>{{classDetails.name}}
+                    </h1>
+                </div>
+
 
             </div>
             <!--Body-->
@@ -85,12 +88,9 @@
                 <p class="margin-needed-bottom">{{classDetails.description}}</p>
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <img src="http://www.clipartkid.com/images/73/gold-star-clipart-no-background-clipart-panda-free-clipart-images-7ttePG-clipart.png"
-                             height="100%" alt="">
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h4>Syllabus</h4>
+                    <div class="col-md-4 offset-md-4">
+                        <h4>Objectives</h4>
+                        <br>
                         <ul class="list-group">
                             <li class="list-group-item">Cras justo odio</li>
                             <li class="list-group-item">Dapibus ac facilisis in</li>

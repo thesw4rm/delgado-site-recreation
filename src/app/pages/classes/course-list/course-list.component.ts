@@ -1,10 +1,13 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Class} from './class';
+import {AfterViewInit, Component, Inject, OnInit} from "@angular/core";
+import {Class} from "./class";
 
 @Component({
                selector: 'app-course-list',
                templateUrl: './course-list.component.html',
-               styleUrls: ['./course-list.component.css']
+               styleUrls: ['./course-list.component.css'],
+               providers: [
+                   {provide: Window, useValue: window}
+               ],
            })
 export class CourseListComponent implements OnInit, AfterViewInit {
     classes: Class[];
@@ -18,7 +21,7 @@ export class CourseListComponent implements OnInit, AfterViewInit {
         subject: string
     };
 
-    constructor() {
+    constructor(@Inject(Window) private windowRef: Window) {
         this.classDetails = {
             name: '',
             description: '',
