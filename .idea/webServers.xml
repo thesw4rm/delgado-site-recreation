@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="8ea34522-5c5d-42cd-99f7-4203a5f246d6" name="delgado" url="http://testing.elearnclass.org">
-        <fileTransfer host="testing.elearnclass.org" port="22" privateKey="C:\Users\ytpillai\Documents\Volunteer\Delgado\ssh\main.ppk" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
+      <webServer id="8ea34522-5c5d-42cd-99f7-4203a5f246d6" name="delgado" url="http://unguessable_subdomain_good_luck.elearnclass.org">
+        <fileTransfer host="unguessable_subdomain_good_luck.elearnclass.org" port="22" privateKey="C:\Users\ytpillai\Documents\Volunteer\Delgado\ssh\main.ppk" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

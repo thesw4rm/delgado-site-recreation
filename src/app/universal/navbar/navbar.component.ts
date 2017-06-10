@@ -19,6 +19,12 @@ export class NavbarComponent implements OnInit {
         );
     }
 
+    collapseNavbar() {
+        if (this.windowWidth() <= 991) {
+            $(".navbar-toggler").click();
+        }
+    }
+
     static runAllOnce() {
         NavbarComponent.setNavbarHeight();
         if ($(window).width() <= 991) {
@@ -46,6 +52,14 @@ export class NavbarComponent implements OnInit {
         if ($(window).width() <= 991) {
             NavbarComponent.setButtonListener();
         }
+    }
+
+    windowWidth() {
+        return $(window).width();
+    }
+
+    windowHeight() {
+        return $(window).height();
     }
 
     static setNavbarHeight(): void {

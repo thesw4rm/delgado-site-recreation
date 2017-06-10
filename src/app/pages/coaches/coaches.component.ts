@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Title} from '@angular/platform-browser';
+import {AfterViewInit, Component, OnInit} from "@angular/core";
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -16,7 +16,7 @@ export class CoachesComponent implements AfterViewInit, OnInit {
     }
 
     ngOnInit() {
-        this.setTitle('eLearning Directory');
+        this.setTitle('eLearning Coach Directory');
     }
 
     ngAfterViewInit() {

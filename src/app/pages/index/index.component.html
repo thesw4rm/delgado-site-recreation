@@ -1,15 +1,11 @@
-<app-navbar></app-navbar>
 <!-- Main container-->
 <div id="about">
-    <div class="container"><!--Section heading-->
-
-                           <!--Section sescription-->
+    <div class="container">
         <h2 class="h2-responsive wow fadeIn section-heading text-center section-description lead margin-needed">
-            Welcome to eLearn. Check out the links below to find quick help from your teachers and coaches. And you can
-            always use the chat in the bottom-right to get live help from an eLearn teacher or coach!
+            Welcome to eLearn!
         </h2>
 
-        <section class="section feature-box">
+        <section id="links-section" class="section feature-box">
 
 
             <!--First row-->
@@ -17,11 +13,12 @@
                 <!--First column-->
                 <div class="col-md-4 mb-r">
                     <i class="fa fa-leanpub blue-text"></i>
-                    <h4 class="feature-title"><a class="blue-text" routerLink="/classes" routerLinkActive="">Browse our
+                    <h4 class="feature-title"><a class="blue-text" routerLink="/classes" routerLinkActive="">Browse
+                                                                                                             our
                                                                                                              classes</a>
                     </h4>
-                    <p class="grey-text">View our current eLeran classes as you build your online schedule for the nextx
-                                         session</p>
+                    <p class="lead">View our current eLearn classes as you build your online schedule for the next
+                                    session</p>
                 </div>
                 <!--/First column-->
 
@@ -31,8 +28,8 @@
                     <h4 class="feature-title">
                         <a class="green-text" routerLink="/coaches" routerLinkActive="">Meet the eLearn Team</a>
                     </h4>
-                    <p class="grey-text">Your eLearn teachers and coaches are here to help you succeed online. Check out
-                                         our current staff including how to connect with each other</p>
+                    <p class="lead">Your eLearn teachers and coaches are here to help you succeed online. Check out
+                                    our current staff including how to connect with each other</p>
                 </div>
                 <!--/Second column-->
 
@@ -42,21 +39,114 @@
                     <h4 class="feature-title">
                         <a routerLink="/help" routerLinkActive="" class="red-text">Get Help</a>
                     </h4>
-                    <p class="grey-text">Browse a list of frequently asked questions or use the chat to get live support
-                                         from an eLearn coach!</p>
+                    <p class="lead">Browse a list of frequently asked questions or use the chat to get live support
+                                    from an eLearn coach!</p>
                 </div>
                 <!--/Third column-->
             </div>
             <!--/First row-->
 
         </section>
+        <hr style="border-width: 2px; background-color: darkgrey; color: black; display: block;">
 
-        <h2 class="h2-responsive wow fadeIn section-heading text-center section-description lead margin-needed">
-            Try the chat in the bottom-right to get live help from an eLearn teacher or coach!
-        </h2>
+        <section id="test-section" class="section feature-box">
+
+            <!--Section heading-->
+            <h1 class="section-heading">How does eLearn work?</h1>
+            <!--Section sescription-->
+            <h4 class="wow fadeIn section-description darkgrey-text margin-needed-bottom-extra">
+                eLearn is a free online program to help you achieve your goals in
+                school, work, and life.
+            </h4>
+
+            <!--First row-->
+            <div class="row features-small">
+
+                <!--First column-->
+                <div id="elearn-logo" class="col-md-7 mb-r center-on-small-only">
+                    <img ngClass="center-block vertical-center"
+                         src="https://api.elearnclass.org/api/image?width={{img_width}}&height={{img_height}}&path=bgs/logo.png"
+                         alt="eLearn Class Logo" class="z-depth-0">
+                </div>
+                <!--/First column-->
+
+                <!--Second column-->
+                <div class="col-md-5 center-on-small">
+                    <!--First row-->
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-university indigo-text"></i>
+                        </div>
+                        <div class="offset-1 col-10">
+                            <h4 class="feature-title">Orientation</h4>
+                            <p class="darkgrey-text">Start with Orientation to learn about the program and take a
+                                                     pre-test
+                                                     to see how you are doing in English and Math and what to study
+                                                     online.</p>
+                        </div>
+                    </div>
+                    <!--/First row-->
+
+                    <div style="height:50px"></div>
+
+                    <!--Second row-->
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-leanpub indigo-text"></i>
+                        </div>
+                        <div class="offset-1 col-10">
+                            <h4 class="feature-title">Classes</h4>
+                            <p class="darkgrey-text">New classes in reading, writing, social studies, science, and math,
+                                                     start every month. Take what interests you and will help you reach
+                                                     your
+                                                     goals.</p>
+                        </div>
+                    </div>
+                    <!--/Second row-->
+
+                    <div style="height:50px"></div>
+
+                    <!--Third row-->
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-desktop indigo-text"></i>
+                        </div>
+                        <div class="offset-1 col-10">
+                            <h4 class="feature-title">Testing</h4>
+                            <p class="darkgrey-text">It’s always up to you to decide when you’re ready for the real
+                                                     test.
+                                                     Try a free practice test at home, and talk with your coach to
+                                                     register
+                                                     for the real exam. And if you don’t pass, that’s okay! You can keep
+                                                     studying and try again.</p>
+                        </div>
+                    </div>
+                    <!--/Third row-->
+
+                    <!--Fourth row-->
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-graduation-cap indigo-text"></i>
+                        </div>
+                        <div class="offset-1 col-10">
+                            <h4 class="feature-title">Graduation</h4>
+                            <p class="darkgrey-text">After you pass the test, we are here to help you get ready for
+                                                     college,
+                                                     apply for jobs, and move on in your educational journey.</p>
+                        </div>
+                    </div>
+                    <!--/Fourth row-->
+                </div>
+                <!--/Second column-->
+            </div>
+            <!--/First row-->
+            <h2 class="h2-responsive wow fadeIn section-heading text-center section-description lead margin-needed">
+                Try the chat in the bottom-right to get live help from an eLearn teacher or coach!
+            </h2>
+        </section>
+
     </div>
 </div>    <!--/Section: Features v.1-->
 <!--/Section: Best features-->
 
 
-<app-footer></app-footer>

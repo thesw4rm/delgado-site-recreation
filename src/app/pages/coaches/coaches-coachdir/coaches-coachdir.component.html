@@ -25,7 +25,7 @@
 
                                     <!-- Image-->
                                     <div class="card-up">
-                                        <img src="//images.unsplash.com/photo-1460751329354-07d91b47af38?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg="
+                                        <img src="/assets/img/bgs/sample_quote.jpg"
                                              class="img-fluid">
                                     </div>
                                     <!--Avatar-->
@@ -35,9 +35,8 @@
                                     </div>
                                     <!--Content-->
                                     <div class="card-block">
-                                        <h4>{{x.nsme}}</h4>
+                                        <h5>{{x.nsme}}</h5>
                                         <p>{{x.role}}</p>
-                                        <!--Triggering button-->
                                         <a class="rotate-btn" (click)="openCard($event.target);"
                                            [attr.data-card]="x._id"><i
                                                 class="fa fa-repeat"></i> Click here
@@ -57,13 +56,20 @@
                                     <hr>
                                     <!--Social Icons-->
                                     <ul class="inline-ul">
-                                        <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i
+                                        <li *ngIf="x.facebook"><a href="{{x.facebook}}" class="icons-sm fb-ic"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                        <li *ngIf="x.instagram"><a href="{{x.instagram}}" class="icons-sm tw-ic"><i
+                                                class="fa fa-instagram"></i></a></li>
+                                        <li *ngIf="x.gmail"><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i
                                                 class="fa fa-envelope"></i></a>
                                         </li>
-                                        <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
+                                        <li *ngIf="x.youtube"><a href="{{x.youtube}}" class="icons-sm li-ic"><i
+                                                class="fa fa-video-camera"></i></a></li>
                                     </ul>
+                                    <p *ngIf="x.ycbme" class="coach-about">Or feel free to <a href="//{{x.ycbme}}">throw
+                                                                                                                   some
+                                                                                                                   time</a>
+                                                                           on my calendar</p>
                                     <!--Triggering button-->
                                     <a (click)="closeCard($event.target);" class="rotate-btn"
                                        [attr.data-card]="x._id"><i class="fa fa-undo"></i>

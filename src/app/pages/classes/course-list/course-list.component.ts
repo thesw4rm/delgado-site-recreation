@@ -1,71 +1,84 @@
-import {AfterViewInit, Component, Inject, OnInit} from "@angular/core";
+import {AfterViewInit, Component, OnInit} from "@angular/core";
 import {Class} from "./class";
+import {ClassesCourseListService} from "./services/classes-course-list.service";
 
 @Component({
                selector: 'app-course-list',
                templateUrl: './course-list.component.html',
                styleUrls: ['./course-list.component.css'],
                providers: [
-                   {provide: Window, useValue: window}
+                   ClassesCourseListService
                ],
            })
 export class CourseListComponent implements OnInit, AfterViewInit {
     classes: Class[];
-    searchClasses = '';
-    searchSubject = '';
+    searchClasses: string;
+    searchSubject: string;
     subjects: string[];
     classDetails: {
         name: string,
         description: string,
-        startDate: string,
-        subject: string
+        subject: string,
+        img: string,
+        objectives: string[]
     };
 
-    constructor(@Inject(Window) private windowRef: Window) {
+    windowRef: any;
+
+    constructor(private classService: ClassesCourseListService) {
         this.classDetails = {
             name: '',
             description: '',
-            startDate: '',
-            subject: ''
+            subject: '',
+            img: '',
+            objectives: []
         };
+        this.windowRef = window;
+
     }
 
     ngOnInit() {
-        this.classes = [
-            new Class('Analysis', 'Reading and Writing', new Date('May 12, 2017 14:15:00'),
-                      'Learn how to apply critical thinking skills to better understand everything you read'
-            ),
-            new Class(
-                'Grammar', 'Reading and Writing', new Date('May 12, 2017 15:12:00'),
-                'Learn the rules to write formally and properly in an appropriate setting.'
-            ),
-            new Class(
-                'Fractions and Ratios', 'Math', new Date('May 12, 2017 17:00:00'),
-                'Learn how to use fractions and ratios to calculate proportions'
-            ),
-            new Class(
-                'Functions 1', 'Math', new Date('May 24 2017, 20:00:00'),
-                'Learn about variables and get started with Algebra 1'
-            ),
-            new Class(
-                'Learning to Learn 2', 'Electives', new Date('May 19, 2017 23:00:00'),
-                'Learn about the strategies to help you get better at learning (like the growth mindset)'
-            ),
-            new Class(
-                'Science', 'Electives', new Date('May 30, 2017 05:00:00'),
-                'Check out our first science class where we will look at the HiSET Science section and strategies to prepare'
-            ),
-        ];
-        this.subjects = this.getUniqueSubjects();
+
+
+        this.classService.getClasses().subscribe(
+            (classList) => {
+                this.classes = classList;
+                let index = 0;
+                for (let i in this.classes) {
+                    this.classes[i]['index'] = index;
+                    index++;
+                }
+                this.subjects = this.getUniqueSubjects();
+                $('.closebtn-modal').click(
+                    function () {
+                        $('.modal-backdrop').remove();
+                    }
+                );
+
+                $(document).keyup(
+                    function (e) {
+                        if (e.keyCode === 27) {
+                            $('.modal-backdrop').remove();
+                        }
+                    });
+                this.searchClasses = '';
+                this.searchSubject = '';
+            }, //Response callback
+
+            (error) => {
+                console.log(error);
+            }, //Error callback
+
+            () => {
+
+            } //Complete callback
+        );
+
 
     }
 
     ngAfterViewInit() {
-        $('.closebtn-modal').click(
-            function () {
-                $('.modal-backdrop').remove();
-            }
-        );
+
     }
 
     modalButtonClick(id: number) {
@@ -90,8 +103,9 @@ export class CourseListComponent implements OnInit, AfterViewInit {
     updateClassDetails(id: number) {
         this.classDetails.name = this.classes[id].name;
         this.classDetails.description = this.classes[id].description;
-        this.classDetails.startDate = this.classes[id].startDate.toDateString();
         this.classDetails.subject = this.classes[id].subject;
+        this.classDetails.img = this.classes[id].img;
+        this.classDetails.objectives = this.classes[id].objs.split(",");
     }
 
 

@@ -3,26 +3,23 @@
         <div class="container">
             <h1 class="h1-responsive section-heading wow fadeIn">Course Catalog</h1>
             <p class="lead section-description">
-                Here are our current and upcoming eLearn classes. You can use the buttons on the
-                right to choose a subject; then click <b>View More</b> to find more information about each class!
+                Here are our current and upcoming eLearn classes. You can use the buttons to choose a subject, and then
+                click <b>View More</b> to find more information about each class!
             </p>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="vertical-center">
-                        <h1>Choose Subject</h1>
-                        <br>
-                        <form id="subjects-form" role="search">
-                            <fieldset class="form-group" *ngFor="let subject of subjects, let i = index">
-                                <input (change)="searchSubject = $event.target.value" [value]="subject" name="subjects"
-                                       type="radio" id="{{'radio' + i}}" [attr.checked]="i == 0 ? true : null">
-                                <label for="{{'radio' + i}}">{{subject}}</label>
-                            </fieldset>
+                    <h1>Choose Subject</h1>
+                    <br>
+                    <form id="subjects-form" role="search">
+                        <fieldset class="form-group" *ngFor="let subject of subjects, let i = index">
+                            <input (change)="searchSubject = $event.target.value" [value]="subject" name="subjects"
+                                   type="radio" id="{{'radio' + i}}" [attr.checked]="i == 0 ? true : null">
+                            <label for="{{'radio' + i}}">{{subject}}</label>
+                        </fieldset>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-6 offset-md-2">
-                    -*
 
 
                     <div class="md-form">
@@ -41,12 +38,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let course of classes | courseFilter:searchClasses | subjectFilter:searchSubject, let i=index">
-                                    <th scope="row">{{i+1}}</th>
+                                <tr *ngFor="let course of classes | courseFilter:searchClasses | subjectFilter:searchSubject, let i = index">
+                                    <!--| courseFilter:searchClasses | subjectFilter:searchSubject, let i=index-->
+                                    <th scope="row">{{i + 1}}</th>
                                     <td>{{course.name}}</td>
                                     <td *ngIf="windowRef.innerWidth > 576">{{course.description}}</td>
                                     <td>
-                                        <button (click)="modalButtonClick(i)" type="button"
+                                        <button (click)="modalButtonClick(course['index'])" type="button"
                                                 class="btn btn-primary btn-sm class-detail-modal-btn"
                                                 data-toggle="modal"
                                                 data-target="classDetailModal">
@@ -76,7 +74,7 @@
                 <div class="modal-title w-100" id="myModalLabel">
                     <h1>
                         <img id="class-logo" class="img-fluid"
-                             src="http://placehold.it/350x150"
+                             src="{{classDetails.img}}"
                              height="20%" alt=""><br>{{classDetails.name}}
                     </h1>
                 </div>
@@ -92,11 +90,7 @@
                         <h4>Objectives</h4>
                         <br>
                         <ul class="list-group">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item" *ngFor="let obj of classDetails.objectives">{{obj}}</li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-6"></div>
@@ -108,9 +102,6 @@
                 <button type="button"
                         class="btn btn-secondary waves-effect waves-light closebtn-modal"
                         data-dismiss="modal">Close
-                </button>
-                <button type="button" class="btn btn-primary waves-effect waves-light">Save
-                                                                                       changes
                 </button>
             </div>
         </div>

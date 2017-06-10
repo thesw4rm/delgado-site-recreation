@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {Title} from "@angular/platform-browser";
 
 @Component({
                selector: 'app-catalog',
@@ -7,10 +8,14 @@ import {Component, OnInit} from '@angular/core';
            })
 export class ClassesComponent implements OnInit {
 
-    constructor() {
+    constructor(private titleService: Title) {
     }
 
+    public setTitle(newTitle: string) {
+        this.titleService.setTitle(newTitle);
+    }
     ngOnInit() {
+        this.setTitle('eLearn Course Directory');
     }
 
 }

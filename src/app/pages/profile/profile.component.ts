@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {Title} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
-})
+               selector: 'app-profile',
+               templateUrl: './profile.component.html',
+               styleUrls: ['./profile.component.css']
+           })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+    constructor(private titleService: Title) {
+    }
 
-  ngOnInit() {
-  }
+
+    ngOnInit() {
+        this.titleService.setTitle('eLearn Student Directory');
+    }
 
 }

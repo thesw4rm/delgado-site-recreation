@@ -16,6 +16,9 @@ import {CourseFilterPipe} from "./pages/classes/course-list/pipes/course-filter.
 import {SubjectFilterPipe} from "./pages/classes/course-list/pipes/subject-filter.pipe";
 import {ProfileComponent} from "./pages/profile/profile.component";
 import {ProfileUserInfoComponent} from "./pages/profile/profile-user-info/profile-user-info.component";
+import {CalendarComponent} from "./pages/calendar/calendar.component";
+import {AboutComponent} from "./pages/about/about.component";
+
 
 @NgModule(
     {
@@ -32,6 +35,8 @@ import {ProfileUserInfoComponent} from "./pages/profile/profile-user-info/profil
             SubjectFilterPipe,
             ProfileComponent,
             ProfileUserInfoComponent,
+            CalendarComponent,
+            AboutComponent,
         ],
         imports: [
             BrowserModule,
@@ -45,7 +50,7 @@ import {ProfileUserInfoComponent} from "./pages/profile/profile-user-info/profil
                     },
                     {
                         path: 'about',
-                        component: IndexComponent
+                        component: AboutComponent
                     },
                     {
                         path: 'coaches',
@@ -58,6 +63,10 @@ import {ProfileUserInfoComponent} from "./pages/profile/profile-user-info/profil
                     {
                         path: 'profile',
                         component: ProfileComponent
+                    },
+                    {
+                        path: 'calendar',
+                        component: CalendarComponent
                     }
 
                 ]
