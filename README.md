@@ -1,4 +1,4 @@
-#Hosting
+# Hosting
     
     1. AWS EC2 Container
     2. NGINX reverse proxy/server for API and main hosting
@@ -8,18 +8,18 @@
     4. Cloudflare DNS and security (Joey Lehrman has the details)
 
 
-#Design 
+# Design 
     
     1. Angular 2/Typescript
     2. MDBootstrap (https://mdbootstrap.com for docs)
     
-#What needs to be done
+# What needs to be done
 
     1. API needs to be either rewritten or edited so it accesses a database. Currently, data is pulled from a Google Sheets page
     2. MySQL database with data imported setup on port 2123, is ready for use.
     3. CMS solution so pages can be added based on certain themes, and database can have new entries or current entries edited
 
-#How to access/upload files
+# How to access/upload files
     
     1. Setup PUTTY
         * Download and install putty for your system, should be available online
@@ -44,7 +44,8 @@
     4. Just a note, the compilation may freeze in the middle occasionally, clicking enter/return or ctrl (command on mac)+c should get it working again. 
     
     
-#Contacting me (Yadunandan Pillai)
+# Contacting me (Yadunandan Pillai)
+
     1. Email: ytpillai@gmail.com
     2. Hangouts: same as above
     3. I'm normally checking my Google Hangouts, bit less responsive on email
