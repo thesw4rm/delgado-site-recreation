@@ -9,6 +9,9 @@ export class SubjectFilterPipe implements PipeTransform {
         if (!value) {
             return [];
         }
+        else if (args === 'All') {
+            return value;
+        }
         return value.filter(
             course => {
                 return course.subject.toLowerCase() === args.toLowerCase() || args === '';

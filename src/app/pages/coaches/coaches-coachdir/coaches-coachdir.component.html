@@ -25,7 +25,7 @@
 
                                     <!-- Image-->
                                     <div class="card-up">
-                                        <img src="/assets/img/bgs/sample_quote.jpg"
+                                        <img src="{{x.cover_img}}"
                                              class="img-fluid">
                                     </div>
                                     <!--Avatar-->
@@ -56,17 +56,22 @@
                                     <hr>
                                     <!--Social Icons-->
                                     <ul class="inline-ul">
-                                        <li *ngIf="x.facebook"><a href="{{x.facebook}}" class="icons-sm fb-ic"><i
+                                        <li *ngIf="x.facebook"><a target="_blank" href="{{x.facebook}}"
+                                                                  class="icons-sm fb-ic"><i
                                                 class="fa fa-facebook"></i></a></li>
-                                        <li *ngIf="x.instagram"><a href="{{x.instagram}}" class="icons-sm tw-ic"><i
+                                        <li *ngIf="x.instagram"><a target="_blank" href="{{x.instagram}}"
+                                                                   class="icons-sm tw-ic"><i
                                                 class="fa fa-instagram"></i></a></li>
-                                        <li *ngIf="x.gmail"><a href="mailto:{{x.gmail}}" class="icons-sm gplus-ic"><i
+                                        <li *ngIf="x.gmail"><a target="_blank" href="mailto:{{x.gmail}}"
+                                                               class="icons-sm gplus-ic"><i
                                                 class="fa fa-envelope"></i></a>
                                         </li>
-                                        <li *ngIf="x.youtube"><a href="{{x.youtube}}" class="icons-sm li-ic"><i
+                                        <li *ngIf="x.youtube"><a target="_blank" href="{{x.youtube}}"
+                                                                 class="icons-sm li-ic"><i
                                                 class="fa fa-video-camera"></i></a></li>
                                     </ul>
-                                    <p *ngIf="x.ycbme" class="coach-about">Or feel free to <a href="//{{x.ycbme}}">throw
+                                    <p *ngIf="x.ycbme" class="coach-about">Or feel free to <a target="_blank"
+                                                                                              href="{{x.ycbme}}">throw
                                                                                                                    some
                                                                                                                    time</a>
                                                                            on my calendar</p>

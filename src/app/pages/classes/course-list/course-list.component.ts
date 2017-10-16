@@ -92,6 +92,7 @@ export class CourseListComponent implements OnInit, AfterViewInit {
 
     getUniqueSubjects() {
         const subjects = [];
+        subjects.push('All');
         for (const c of this.classes) {
             if (subjects.indexOf(c.subject) === -1) {
                 subjects.push(c.subject);
@@ -105,7 +106,7 @@ export class CourseListComponent implements OnInit, AfterViewInit {
         this.classDetails.description = this.classes[id].description;
         this.classDetails.subject = this.classes[id].subject;
         this.classDetails.img = this.classes[id].img;
-        this.classDetails.objectives = this.classes[id].objs.split(",");
+        this.classDetails.objectives = this.classes[id].objs.split(";");
     }
 
 

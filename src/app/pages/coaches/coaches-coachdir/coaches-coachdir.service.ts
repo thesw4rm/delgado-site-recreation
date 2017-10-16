@@ -9,7 +9,7 @@ export class CoachesCoachdirService {
     private baseUrl: string;
 
     constructor(private http: Http) {
-        this.baseUrl = 'https://api.elearnclass.org/api/coaches-sheet';
+        this.baseUrl = 'http://52.15.54.186:4200/api/coaches-sheet';
     }
 
     getCoaches(): Observable<Coach[]> {

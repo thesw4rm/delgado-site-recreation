@@ -90,10 +90,11 @@
                         <h4>Objectives</h4>
                         <br>
                         <ul class="list-group">
-                            <li class="list-group-item" *ngFor="let obj of classDetails.objectives">{{obj}}</li>
+                            <li class="list-group-item" *ngFor="let obj of classDetails.objectives">
+                                {{obj.trim().replace("\n", "").replace("\t", "").replace("\r", "")}}
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-sm-6"></div>
                 </div>
 
             </div>

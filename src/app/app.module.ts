@@ -4,69 +4,66 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
-import {IndexComponent} from "./pages/index/index.component";
 import {NavbarComponent} from "./universal/navbar/navbar.component";
 import {FooterComponent} from "./universal/footer/footer.component";
-import {CoachesComponent} from "./pages/coaches/coaches.component";
 import {RouterModule} from "@angular/router";
-import {CoachesCoachdirComponent} from "./pages/coaches/coaches-coachdir/coaches-coachdir.component";
-import {ClassesComponent} from "./pages/classes/classes.component";
-import {CourseListComponent} from "./pages/classes/course-list/course-list.component";
-import {CourseFilterPipe} from "./pages/classes/course-list/pipes/course-filter.pipe";
-import {SubjectFilterPipe} from "./pages/classes/course-list/pipes/subject-filter.pipe";
-import {ProfileComponent} from "./pages/profile/profile.component";
-import {ProfileUserInfoComponent} from "./pages/profile/profile-user-info/profile-user-info.component";
-import {CalendarComponent} from "./pages/calendar/calendar.component";
-import {AboutComponent} from "./pages/about/about.component";
+import {ProfileModule} from "./pages/profile/profile.module";
+import {BlogModule} from "./pages/blog/blog.module";
+import {ClassesModule} from "./pages/classes/classes.module";
+import {IndexModule} from "./pages/index/index.module";
+import {AboutModule} from "./pages/about/about.module";
+import {CalendarModule} from "./pages/calendar/calendar.module";
+import {CoachesModule} from "./pages/coaches/coaches.module";
 
 
 @NgModule(
     {
         declarations: [
             AppComponent,
-            IndexComponent,
             NavbarComponent,
             FooterComponent,
-            CoachesComponent,
-            CoachesCoachdirComponent,
-            ClassesComponent,
-            CourseListComponent,
-            CourseFilterPipe,
-            SubjectFilterPipe,
-            ProfileComponent,
-            ProfileUserInfoComponent,
-            CalendarComponent,
-            AboutComponent,
         ],
         imports: [
             BrowserModule,
             FormsModule,
             HttpModule,
+            ProfileModule,
+            BlogModule,
+            ClassesModule,
+            IndexModule,
+            AboutModule,
+            CalendarModule,
+            CoachesModule,
             RouterModule.forRoot(
                 [
                     {
                         path: '',
-                        component: IndexComponent
+                        loadChildren: 'app/pages/index/index.module.ts#IndexModule'
                     },
                     {
                         path: 'about',
-                        component: AboutComponent
+                        loadChildren: 'app/pages/about/about.module.ts#AboutModule'
                     },
                     {
                         path: 'coaches',
-                        component: CoachesComponent
+                        loadChildren: 'app/pages/coaches/coaches.module.ts#CoachesModule'
                     },
                     {
                         path: 'classes',
-                        component: ClassesComponent
+                        loadChildren: 'app/pages/classes/classes.module.ts#ClassesModule'
                     },
                     {
                         path: 'profile',
-                        component: ProfileComponent
+                        loadChildren: 'app/pages/profile/profile.module.ts#ProfileModule'
                     },
                     {
                         path: 'calendar',
-                        component: CalendarComponent
+                        loadChildren: 'app/pages/calendar/calendar.module.ts#CalendarModule'
+
+                    },
+                    {
+                        path: 'blog',
+                        loadChildren: 'app/pages/blog/blog.module.ts#BlogModule'
                     }
 
                 ]

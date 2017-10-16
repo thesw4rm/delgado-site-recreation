@@ -26,17 +26,22 @@
                     <a (click)="collapseNavbar()" routerLinkActive="active" routerLink="/profile" class="nav-link">Your
                                                                                                                    Profile</a>
                 </li>
-            </ul>
-            <ul *ngIf="!(windowWidth() > 991)" class="pull-md-12 navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link" href="http://help.elearnclass.org">Help</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/blog">Blog</a>
+                </li>
+            </ul>
+            <ul *ngIf="windowWidth() > 992" class="pull-md-12 navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://help.elearnclass.org" target="_blank">Help</a>
+                </li>
+
+            </ul>
+            <ul *ngIf="windowWidth() <= 992" class="pull-md-12 navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://help.elearnclass.org" target="_blank">Help</a>
                 </li>
             </ul>
         </div>
-        <ul *ngIf="windowWidth() > 991" class="pull-md-12 navbar-nav mr-auto">
-            <li class="nav-item">
-                <a target="_blank" class="nav-link" href="http://help.elearnclass.org">Help</a>
-            </li>
-        </ul>
+
     </div>
 </nav>

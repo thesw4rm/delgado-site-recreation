@@ -29,7 +29,9 @@ export class CoachesCoachdirComponent implements OnInit {
 
     getCoaches() {
         this.coachService.getCoaches().subscribe(
-            coaches => this.coaches = coaches,
+            (coaches) => {
+                this.coaches = coaches;
+            }
         );
     }
 

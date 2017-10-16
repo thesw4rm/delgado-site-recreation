@@ -5,4 +5,7 @@ export class Coach {
     public role: string;
     public img: string;
     public id: number;
+    public cover_img: string;
+    public quote: string;
+    public quote_author: string;
 }
